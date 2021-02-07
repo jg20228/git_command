@@ -1,0 +1,57 @@
+master - 정확하게 검증된 제품
+
+feature A 에서 commit을 꾸준히 해나가는게 좋음
+
+제품에 포함될 준비가 되었다면 (코드리뷰, 검증 끝나면) master로 merge함!
+그러고 feature A를 삭제함
+
+feacture A에서 작업한 기록들을 하나의 commit으로 만든 후 merge한다.
+
+포인터로 커밋들을 가르키기때문에 GIT에서 브랜치들의 전환이 빠른 이유임
+
+===========================================
+
+git branch -> 내 컴퓨터의 브런치만 확인
+git branch --all -> 원격으로 연결된 브런치도 확인
+
+git branch "생성할 이름" -> 브런치 생성
+
+새로운 브런치는 '포인터' 라고 생각하면 좋다
+
+
+git switch "이동할 브런치명"
+git switch -C "생성하고 이동할 브런치명" -> 생성하고 바로 이동함
+
+git checkout 
+->HEAD가르키는걸 옮길 수도 있음
+->브런치도 이동 가능
+
+git checkout -b "생성하고 이동할 브런치명" -> 생성하고 바로 이동함
+
+
+git branch -v 최신 커밋 확인
+git branch --merged -> 현재 브런치에서 머지가 된 것을 확인
+git branch --no-merged  -> 아직 합쳐지지 않은(merge) 브런치를 확인
+
+
+git branch -d 브런치명
+-> 브런치 삭제
+
+git push origin --delete 브런치명
+-> github에 있는 브런치 삭제
+
+git branch --move 변경전브런치명 변경후브런치명
+-> branch의 이름 변경
+
+git push --set-upstream origin fix-welcome
+-> 원격에 있는 브런치명 수정
+
+
+Q. 브런치 생성 후 이동해보세요
+Q. 새로운 커밋을 만들어보세요
+Q. 마스터에서
+
+git log master..test -> 마스터와 test브런치 사이의 커밋을 확인
+git diff master..test -> 코드도 확인 가능
+
+

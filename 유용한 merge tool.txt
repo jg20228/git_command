@@ -1,0 +1,16 @@
+P4merge
+
+git config --global -e
+
+[merge]
+tool = p4merge
+
+[mergetool "p4merge"]
+path를 설정해준다
+path ="C:~/p4merge"
+
+
+REMOTE 작업하고자하는 브런치
+LOCAL 작업하는 브런치
+
+머지 후 컨트롤+C 로 나옴

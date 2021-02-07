@@ -1,0 +1,26 @@
+===================================
+merge
+
+1. 간단한 fast-forward merges
+
+master branch의 변동사항이 없다면 가르키는 포인터를 합칠려는 branch의 최근 포인터로 가르킴
+-> 단점 : merge가 된 기록이 남지 않음
+
+git merge feature-a -> master branch에서
+feature-a를 master에 합침
+
+-> 이러면 feature-a는 더 이상 필요 없기 때문에 삭제함
+-> 장단점 : merge 기록이 없음
+
+2. (NO) fast-forwd merges
+
+git merge --no-ff 브런치명
+-> merge 기록이 무조건 남는다.
+이러면 title을 정하라는 창이 나옴
+
+
+3. Three-way merges
+
+fast-forward 불가능한 상황이 오거나 히스토리 남기는걸 좋아할때
+
+master에 추가적인 커밋이 있고, 새로운 브런치를 합쳐야하는 상황일때 씀

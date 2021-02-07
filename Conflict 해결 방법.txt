@@ -1,0 +1,63 @@
+Git이 merge를 할때 문제가 있어서 발생함
+
+'충돌'
+
+같은 파일을 수정할 경우 종종 일어남
+
+git status 를 이용하면 어떤 파일에서 충돌이 났는지 알 수 있다.
+
+해당 파일을 찾아가면 
+<<<<<<<<<<< HEAD
+
+===========
+
+>>>>>>>>>>> 브런치명
+
+Merge Conflict 해결할때 정말 이것만 해결해야지
+은근슬쩍 변경사항을 넣으면 나쁜 행동임
+
+git merge --abort 
+-> merge 취소
+
+conflict를 해결하려면 git add 파일명
+-> 그러고 계속하려면 밑 명령어 수행
+git merge --continue 주면 merge commit이 만들어짐(title 입력)
+
+일일히 할 수 있지만 강력한 툴들이 많다!
+
+===========================
+git config --global -e 
+
+여기서 diff도 VSC를 쓰게 만든것 처럼
+[merge]
+tool = vscode
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+
+git merge feature에서 충돌이 발생했을때
+
+git mergetool을 입력한다.
+
+그러면 VSC가 뜸
+
+Accept Current Change 현재 것
+Accept Incoming Change 들어온 것
+Accept Both Change 둘다
+Compare Chagnes 비교
+
+
+*** .orig 파일이 생기는데 (오리지널)
+merge conflict가 발생한 내용을 확인할 수 있음
+
+
+git config --global mergetool.keepBackup false
+->자동으로 이 확장자 생기는 이 옵션을 끌 수가 있다.
+
+git merge --abort
+git clean -fd
+->폴스적으로 디렉토리에 있는것을 정리함
+
+============================================
+
+
+

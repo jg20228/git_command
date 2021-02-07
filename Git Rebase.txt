@@ -1,0 +1,35 @@
+3way merge를 하게된 상황에 놓였을때
+
+이때 조건은 master에서 추가적인 branch가 생겼음
+하지만 내 branch를 merge해야하는 상황이면
+
+내가 master에서 가져온건 d라는 커밋
+현재 master는 g라는 마지막 커밋
+
+그러면 rebase로 내가 만든 branch가 g를 가르키게 한다.
+
+그러면 fast forward merge가 가능해짐
+
+
+매우 조심해야하는 상황
+1. 내가 만든 브런치를 나만 작업한다면 언제든지 해도 상관없지만
+2. 다른 개발자가 내가 만든 브런치에서 같이 작업하게 되면 위험함
+3. github에 업로드된 히스토리는 절대 rebase하면 안된다.
+4. 서버에 업데이트 되지 않는 나의 로컬 commit만 자유롭게 한다.
+
+git rebase master (해당 브런치에서) (이러면 최근 master branch의 commit을 가르킴)
+그러고 master에가서 merge를 한다.
+
+========================================
+rebase --onto
+
+branch위에 또 branch를 체이닝해서 만들때 유용함
+-> 포인트 : commit이 비슷해보이지만 새로운 commit이 생성되는것임
+
+위의 조심 상황 4가지를 꼭 지키자.
+
+
+git rebase --onto master 브런치명 파생된브런치명
+-> 이러면 파생된 브런치명에 master branch에서 파생된걸로 확인됨
+
+다시 master로 와서 merge를 하면 ff가 된다.
