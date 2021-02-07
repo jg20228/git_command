@@ -1,0 +1,7 @@
+log --graph --all --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(white)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --date=short
+
+git hist -> alias로 설정한다.
+위 커맨드를 다 적을 수 없으니
+
+git config --global alias.hist "위에 긴거 복붙"
+hist는 원하는 이름으로 설정

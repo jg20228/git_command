@@ -21,15 +21,16 @@ MAC : line feed(\n)만 들어감
 원치 않게 history나 blame을 보는데 방해를 함 (공백이 들어가서)
 
 윈도우
-true 설정 시 carriage-return을 삭제하게 됨
+true 설정 시 carriage-return을 삭제해서 Git에 전달
 Git에서 가져올땐 carriage-return을 추가해서 가져옴
 
 
 MAC에서 설정해도 carriage-return을 삭제함
 -> email에서 텍스트 복붙할떄 들어가는 경우가 있기 때문이다.
 
+이렇게 설정 시 공백으로 인한 헷갈림이 줄어듬
 ----------------------------------------------------------------
-Workflow
+Workflow (3개의 영역)
 
 working directory
 1. untracked -> 파일을 생성해서 git이 모름 
