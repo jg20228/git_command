@@ -1,0 +1,63 @@
+==
+개념
+
+working directory에서 commit할 단계는 아닌데 
+branch를 옮겨야할 때
+
+이 때 유용하게 사용하는것이 Stash이다.
+
+Stash Stack(POP)
+->잠시 저장할 수 있음
+
+Bug fix할때 각각의 시도를 stash에 저장 해둘 수 있음 
+
+====================================
+git stash push = git stash
+
+git stash push -m "저장할 메시지"
+->working directory와 ,index(Staging area)를 stash에 밀어둠
+
+git stash push -m "seconde try" --keep-index
+->내가 작업한 내용이 유지가 됨
+->index에 있는 staging area에 있는것을 유지하면서 stash에 저장
+
+
+untracked 파일은 stash에 저장되지 않는다.
+git stash -u
+->새로 생성된 파일(untracked)도 같이 저장이 된다.
+
+
+※ 내용 확인
+git stash list ->전체 내용 확인
+stash@{id}
+id는 stack처럼 쌓인다(큰게 최근것)
+
+git stash show 저장한 아이디 입력
+->수정내역 확인
+git stash show 저장한 아이디 입력 -p
+->자세히
+
+
+※ stash 꺼내오기
+
+1. git stash list에서 id를 알아 내기
+
+git stash apply
+->스택 제일 위에거 가져옴
+
+git stash apply id
+->해당 id를 가져옴
+
+git stash pop을 이용하면
+->제일 위에 있는 내용이 working directory로 옮겨져 나옴
+
+apply -> 목록 유지하면서 가져오기
+pop -> 목록에서 제거하면서 가져오기
+drop -> 해당 id 지우기
+clear -> 모든 리스트 제거
+
+
+stash를 적용하면서 새로운 branch를 만들고 이동하고 싶다면
+->git stash branch 브런치명
+
+
