@@ -1,0 +1,13 @@
+2021-02-10 GIT 취소
+
+history를 작성하는 것은 새로운 커밋을 만드는것이다.
+
+Undo
+
+WIP - Working In Progress (아직 일을 하는 중)
+WIP을 쓰면 뒤에 무슨 작업인지 적어야한다.
+
+git restore . (수정된 파일 전부 되돌리기)
+
+만약 Staging Area에 있다면?
+->git restore --staged  파일명 or .(dot)
