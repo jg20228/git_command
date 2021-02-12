@@ -1,0 +1,13 @@
+revert
+이미 서버에 푸시된 것을 수정할때 revert를 이용함
+(history를 사용하는게 아님)
+
+
+git revert HEAD 또는 해쉬코드
+->commit을 삭제한 기록을 남기는 commit을 생성함
+
+
+git revert --no-commit 해쉬코드
+->해당 commit을 삭제하고 나서 commit을 하지 않고 staging area에 추가를 함
+
+

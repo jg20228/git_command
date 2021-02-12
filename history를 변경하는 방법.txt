@@ -1,0 +1,58 @@
+서버의 업로드된 경우 피하는게 좋다.
+
+interactive rebasing을 이용하면 최신 커밋이 아닌 곳을 수정한다.
+
+주의점 : rebasing하는 순간 하나만 수정해도
+뒤에 모든 것들이 업데이트 되기때문에 새로운 아이템이 됨.
+
+하고싶은 커밋의 전 해쉬코드를 목표를 잡아야한다.
+
+
+git rebase -i 해쉬코드
+-i는 interactive의 약자임
+
+지정한 해쉬코드부터 최근까지의 범위를 잡음
+
+이러면 editor에 commands가 적혀있음
+
+squash 여러개의 커밋을 묶어줌
+fixup squash와 같은데 메시지를 안남김
+exec shell 명령어를 직접 이용할때 (잘안씀)
+drop 해당 commit 제거
+
+
+======================
+rebase할때 삭제하거나 수정한 commit에서 그 뒤에 commit에서 
+해당 파일을 수정하면 충돌이 발생함
+
+수동적으로 관리해야함
+git status로 확인 후  
+해당파일을 그대로 사용할거면 git add . 후 git rebase continue를 한다.
+
+======================
+커밋은 1가지만 한다.
+라이브러리가 1개 추가되면 그것을 커밋을하는게 중요하다
+-> 나중에 필요없으면 해당 커밋만 revert하기 위함
+
+======================
+git 분할하기
+
+git rebase -i 해쉬코드 후 
+e로 해당 커밋 분할
+
+git reset --mixed
+->commit을 다시 working directory로 가져온다
+
+원하는 파일을 하나 add. commit 해서 만든다.
+나머지 파일을 add, commit 한다.
+
+git log를 확인하고 마음에 들면 git reabse --continue로 진행한다.
+
+=======================
+history squash
+
+합칠떄 주의점 젤 첫 commit은 pick
+그 뒤에 합칠것들은 s, squash 해준다.
+
+항상 주의하자 : rebase를하고나면 그 뒤에 모든 commit들은 새로 만들어진다.
+서버에 푸시된 history는 정말 조심해야한다(혼자일땐 괜찮음)

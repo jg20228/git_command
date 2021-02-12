@@ -7,7 +7,33 @@ Undo
 WIP - Working In Progress (아직 일을 하는 중)
 WIP을 쓰면 뒤에 무슨 작업인지 적어야한다.
 
-git restore . (수정된 파일 전부 되돌리기)
+
+working directory에 있는 modified 파일을 원래대로 되돌릴려면
+->git restore 파일명 or .(dot) (수정된 파일 전부 되돌리기)
+
 
 만약 Staging Area에 있다면?
 ->git restore --staged  파일명 or .(dot)
+
+
+reset으로 내가 가고자 하는 포인터를 가르킴
+git reset HEAD .
+-> 이 staging에 있는 모든 아이들이 working directory로
+
+git restore --source=해시코드 또는 헤드 포인터
+->??
+
+GIT은 2.23이후로 특정한 명령어가 생겼음
+git checkout으로 다 할 수 있지만
+
+
+git commit --amend -m ""
+->최근 커밋 이름 변경
+
+git commit --amend 
+->에디터에서 커밋 내용이 보인다.
+->메시지를 적지 않고 하면 수정한 내용을 업데이트할때 유용함
+
+모든 undo들은 서버에 update하지 않았을때 사용가능함
+
+
