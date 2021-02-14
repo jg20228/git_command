@@ -1,0 +1,7 @@
+무조건 내 local에 있는 것을 push하기
+
+git push -f 
+->서버 history 무시하고 푸시하기
+
+local history를 server에 맞게 업데이트하고
+나의 commit들을 rebase하는게 맞다.

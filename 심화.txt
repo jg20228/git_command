@@ -1,0 +1,36 @@
+git blame 파일명
+->commit된 해시코드와 누가 반영했는지 정보가 나옴
+
+VSC는
+GitLens라는 extension을 설치하면 오른쪽 위에 아이콘이 생기는데
+그것을 누르면 git blame이 나타난다.
+
+===============================
+git bisect 
+->기능에 문제가 느껴질때 사용함
+
+commit history를 보는데 특정한 부분부터 문제의 commit을 찾아냄
+
+
+git checkout 해쉬코드로 해당 commit으로 가서 실행하고 확인 후
+
+git bisect start
+->시작
+git bisect good
+->여기까진 괜찮았다
+git checkout 최신 포인터(master)를 옮김
+->실행 후 기능문제 확인
+git bisect bad
+->문제 확인 후 bad를 설정
+->이진탐색알고리즘을 이용한다.
+->내 HEAD를 잘 확인하며 이슈를 확인한다.
+->괜찮으면 git bisect good을 마킹해준다.
+->이슈가 발견된 곳에서 git bisect bad를 마킹한다.
+
+git bisect reset 원래 브런치로 돌아감
+
+=============================
+tig
+->터미널 UI tool
+->cli 명령어에 익숙하면 좋음
+

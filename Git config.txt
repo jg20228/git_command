@@ -1,0 +1,25 @@
+단축키 설정
+
+git reset --hard HEAD
+->gh
+
+git stash save
+->gss
+stash에 저장
+
+git stash list
+->gsl
+스태시 리스트
+
+git stash apply
+->gsa
+최근 스태시된것 적용
+
+git commit .
+->git cad
+
+git commit -ma ""
+->git ca "message"
+
+alias에 git config --global -e를 사용하면 editor 설정보기
+명령어 전체를 type하다가 익숙해지면 단축키로 적응하자.

@@ -1,0 +1,37 @@
+fetch는 history를 업데이트하며 HEAD는 유지한다.
+pull은 history를 가지고 오면서 merge하는데 HEAD도 최근거로 바꿈
+
+
+fetch
+server에 있는 history를 가져온다.
+local head와 server head를 유의한다.
+
+
+git fetch origin 브런치명으로도 가능함
+============================
+git pull
+
+로컬과 서버에 커밋이 같은 파일이 수정되면 충돌이 발생함
+
+git mergetool (툴 이용)
+
+git add . 
+git merge --continue
+
+이렇게하면 기본적으로 merge가 발생이 되는데 rebase를 사용하고 싶으면
+
+git reflog
+->커밋 되돌리기위해 log 확인
+reset --hard 해쉬값
+
+git pull --rebase
+server에 있는 commit을 가지고 와서
+local에서 만든 커밋 위에다가 적용
++tool 활용해서 충돌 해결 후
+
+git rebase --continue
+=======================
+server에 있는 commit은 가져오고
+local에서 했던 commit만 rebase했기 때문에 merge history가 발생하지 않음
+
+이유 : 깔끔함

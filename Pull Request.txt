@@ -1,0 +1,10 @@
+Fork
+
+git switch -C fix
+
+오픈소스 프로젝트 참가하기
+-오타, 코멘트 수정하면서 기여하기
+
+git push origin fix
+
+PR은 정확하게 설명해주는게 좋다.
